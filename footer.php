@@ -40,6 +40,13 @@ if ( is_active_sidebar('footer-1') || is_active_sidebar('footer-2') || is_active
 }
 
 ?>
+<div class="footer-full-width">
+<?php
+if ( is_active_sidebar( 'full-width-footer' ) ){
+	dynamic_sidebar( 'full-width-footer' );
+}
+?>
+</div>
 <div class="footer-wrap">
 	<div class="container">
 		<div class="row">
