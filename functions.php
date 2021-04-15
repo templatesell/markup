@@ -46,7 +46,7 @@ if ( ! function_exists( 'markup_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'markup' ),
-			'top' => esc_html__( 'Top Menu', 'markup' ),
+			'footer' => esc_html__( 'Footer Menu', 'markup' ),
 			'social' => esc_html__( 'Social Icons', 'markup' ),
 		) );
 

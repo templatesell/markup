@@ -23,12 +23,30 @@ if (!function_exists('markup_social_sharing')) :
         ?>
         
         <div class="post-share">
-            <a target="_blank" href="<?php echo $markup_facebook_sharing_url; ?>"><i class="fa fa-facebook"></i></a>
-            <a target="_blank" href="<?php echo $markup_twitter_sharing_url; ?>"><i
-                        class="fa fa-twitter"></i></a>
-            <a target="_blank" href="<?php echo $markup_pinterest_sharing_url; ?>"><i
-                        class="fa fa-pinterest"></i></a>
-            <a target="_blank" href="<?php echo $markup_linkedin_sharing_url; ?>"><i class="fa fa-linkedin"></i></a>
+            <span class="btn-text">Share</span>
+            <span class="btn-icon"><i class="fa fa-share-alt"></i></span>
+            <ul class="share-icons">
+                <li>
+                <a target="_blank" href="<?php echo $markup_facebook_sharing_url; ?>">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                </li>
+                <li>
+                    <a target="_blank" href="<?php echo $markup_twitter_sharing_url; ?>">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="<?php echo $markup_pinterest_sharing_url; ?>">
+                        <i class="fa fa-pinterest"></i>
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="<?php echo $markup_linkedin_sharing_url; ?>">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+                </li>
+            </ul>
         </div>
         <?php
     }

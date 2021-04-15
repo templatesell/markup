@@ -6,40 +6,18 @@
 
 	jQuery(document).ready(function() {
     	// Slider JS
-    	$('.modern-slider').slick({
+    	$('.banner-slider').slick({
 			slidesToScroll: 1,
 			autoplay: true,
 			autoplaySpeed: 10000,
 			dots: false,
 			arrows: true,
-			centerMode: true,
-			centerPadding: '25%',
-			prevArrow:
-			'<button type="button" class="slick-prev"><span class="fa fa-angle-left"></span></button>',
-			nextArrow:
-			'<button type="button" class="slick-next"><span class="fa fa-angle-right"></span></button>',
-			arrows: true,
-	      	responsive: [
-	      		{
-	      			breakpoint: 480,
-				  	settings: {
-					  	centerPadding:false,
-					}
-	      		},
-				{
-				  breakpoint: 767,
-				  settings: {
-				  	centerPadding: '10%',
-				  }
-				},
-				{
-				  breakpoint: 992,
-				  settings: {
-				    centerPadding: '15%',
-				  }
-				}
-			]
-    	});
+			nextArrow: '<button class="slick-arrow next-arrow"><i class="fa fa-angle-right"></i></button>',
+            prevArrow: '<button class="slick-arrow prev-arrow"><i class="fa fa-angle-left"></i></button>',
+            appendArrows: '.banner-nav',
+	      	
+    	})
+
 
         // Boxes Section
 	    $('.promo-three').slick({
@@ -89,5 +67,7 @@
 				},"slow");
 			});
 	  	}
- 	}); 	
+	    
+ 	}); 
+ 	
 })(jQuery);

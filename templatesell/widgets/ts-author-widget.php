@@ -102,7 +102,7 @@ if (!class_exists('Markup_Author_Widget')) :
                     <?php
                     }
                     ?>
-
+                    <h5 class="my-3">I am a Bloger</h5>
                     <p><?php if (isset($author_description) && !empty($author_description)) {
                             echo wp_kses_post($instance['author_description']);
                         } ?></p>

@@ -17,19 +17,17 @@ $category = absint($markup_theme_options['markup-show-hide-category']);
 $author = absint($markup_theme_options['markup-show-hide-author']);
 $image_id = get_post_thumbnail_id();
 $image_url = wp_get_attachment_image_src( $image_id,'',true );
+$classes = array(
+    $masonry,
+    'item-blog',
+);
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class($masonry); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class($classes); ?>>
     <div class="post-wrap <?php echo esc_attr($image_location); ?>">
         <?php if(has_post_thumbnail()) { ?>
             <div class="post-media">
                 <a href="<?php the_permalink(); ?>" class="post-image" style="background-image: url(<?php echo esc_url($image_url[0]);?>)"></a>
-                <div class="meta_bottom">
-                    <?php 
-                    if( 1 == $social_share ){
-                        do_action( 'markup_social_sharing' ,get_the_ID() );
-                    }
-                    ?>
-                </div>
+                
             </div>
         <?php } ?>
         <div class="post-content">
@@ -85,12 +83,21 @@ $image_url = wp_get_attachment_image_src( $image_id,'',true );
                     'after' => '</div>',
                 ));
                 ?>
-                <!-- read more -->
-                <?php if (!empty($read_more) && $show_content_from == 'excerpt'): ?>
-                    <a class="more-link" href="<?php the_permalink(); ?>"><?php echo esc_html($read_more); ?> <i
-                                class="fa fa-long-arrow-right"></i>
-                    </a>
-                <?php endif; ?>
+                <div class="d-flex justify-content-between align-items-center">
+                    <!-- read more -->
+                    <?php if (!empty($read_more) && $show_content_from == 'excerpt'): ?>
+                        <a class="more-link" href="<?php the_permalink(); ?>"><?php echo esc_html($read_more); ?> 
+                        <i class="fa fa-long-arrow-right"></i>
+                        </a>
+                    <?php endif; ?>
+                    <div class="meta_bottom">
+                        <?php 
+                        if( 1 == $social_share ){
+                            do_action( 'markup_social_sharing' ,get_the_ID() );
+                        }
+                        ?>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

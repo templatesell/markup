@@ -62,15 +62,9 @@ if ( is_active_sidebar('footer-1') || is_active_sidebar('footer-2') || is_active
 	<footer class="site-footer">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-12 text-center">
+				<div class="col-sm-6">
 					<div class="copyright">
 						<?php echo $copyright; ?>
-						<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'markup' ) ); ?>">
-							<?php
-							/* translators: %s: CMS name, i.e. WordPress. */
-							printf( esc_html__( ' - Proudly powered by %s', 'markup' ), 'WordPress' );
-							?>
-						</a>
 						<span class="sep"> | </span>
 						<?php
 						/* translators: 1: Theme name, 2: Theme author. */
@@ -78,7 +72,17 @@ if ( is_active_sidebar('footer-1') || is_active_sidebar('footer-2') || is_active
 						?>
 					</div>
 				</div>
-				
+				<div class="col-sm-6">
+					<div class="footer-menu">
+						<?php
+							wp_nav_menu( array(
+								'theme_location' => 'footer',
+								'menu_id'        => 'footer-menu',
+								'menu_class'     => 'footer-menu',
+							) );
+						?>
+					</div>
+				</div>
 			</div>
 		</div>
 	</footer>
