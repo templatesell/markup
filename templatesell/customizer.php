@@ -15,11 +15,6 @@ if ( !function_exists('markup_default_theme_options_values') ) :
           'markup_logo_width_option' => '600',
           'markup_logo_position_option'=> 'left-logo',
 
-            /*Top Header*/
-            'markup_enable_top_header'=> 0, 
-            'markup_enable_top_header_social'=> 0,
-            'markup_enable_top_header_menu'=> 0,
-
             /*Header Image*/
             'markup_enable_header_image_overlay'=> 0,
             'markup_slider_overlay_color'=> '#000000',
@@ -27,9 +22,11 @@ if ( !function_exists('markup_default_theme_options_values') ) :
             'markup_header_image_height'=> '100',
 
            /*Header Options*/
+           'markup_enable_top_header_social'=> 0,
+            'markup_enable_search'  => 0,
+            'markup_search_placeholder'=> esc_html__('Search','markup'),
             'markup_enable_advertisement'  => '',
             'markup_link_advertisement'=>'',
-            'markup_enable_search'  => 0,
 
             /*Colors Options*/
             'markup_primary_color'              => '#ec407a',

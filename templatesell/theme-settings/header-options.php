@@ -8,6 +8,23 @@ $wp_customize->add_section('markup_header_section', array(
     'panel' => 'markup_panel',
 ));
 
+/*Enable Social Icons In Header*/
+$wp_customize->add_setting( 'markup_options[markup_enable_top_header_social]', array(
+   'capability'        => 'edit_theme_options',
+   'transport' => 'refresh',
+   'default'           => $default['markup_enable_top_header_social'],
+   'sanitize_callback' => 'markup_sanitize_checkbox'
+) );
+
+$wp_customize->add_control( 'markup_options[markup_enable_top_header_social]', array(
+   'label'     => __( 'Enable Social Icons', 'markup' ),
+   'description' => __('You can show the social icons here. Manage social icons from Appearance > Menus. Social Menu will display here.', 'markup'),
+   'section'   => 'markup_header_section',
+   'settings'  => 'markup_options[markup_enable_top_header_social]',
+   'type'      => 'checkbox',
+   'priority'  => 5,
+) );
+
 
 /*Header Search Enable Option*/
 $wp_customize->add_setting( 'markup_options[markup_enable_search]', array(
@@ -23,6 +40,23 @@ $wp_customize->add_control( 'markup_options[markup_enable_search]', array(
     'section'   => 'markup_header_section',
     'settings'  => 'markup_options[markup_enable_search]',
     'type'      => 'checkbox',
+    'priority'  => 5,
+
+) );
+/*Search Placeholder*/
+$wp_customize->add_setting( 'markup_options[markup_search_placeholder]', array(
+    'capability'        => 'edit_theme_options',
+    'transport' => 'refresh',
+    'default'           => $default['markup_search_placeholder'],
+    'sanitize_callback' => 'sanitize_text_field'
+) );
+
+$wp_customize->add_control( 'markup_options[markup_search_placeholder]', array(
+    'label'     => __( 'Search form Placeholder', 'markup' ),
+    'description' => __('Enter Search Placeholder Text here.', 'markup'),
+    'section'   => 'markup_header_section',
+    'settings'  => 'markup_options[markup_search_placeholder]',
+    'type'      => 'text',
     'priority'  => 5,
 
 ) );

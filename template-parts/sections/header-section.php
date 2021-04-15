@@ -107,7 +107,9 @@ $logo_position = esc_attr($markup_theme_options['markup_logo_position_option']);
 	</setion><!-- #masthead -->
 </header>
 
-<header class="header-1 header-desktop d-none d-lg-block">		
+<header class="header-1 header-desktop d-none d-lg-block">	<?php $header_image = esc_url(get_header_image());
+	$header_class = ($header_image == "") ? '' : 'header-image';
+	?>
 	<section class="main-header <?php echo esc_attr($header_class); ?>" style="background-image:url(<?php echo esc_url($header_image) ?>); background-size: cover; background-position: center; background-repeat: no-repeat;">
 		<div class="head_one">
 			<div class="container">
@@ -159,11 +161,7 @@ $logo_position = esc_attr($markup_theme_options['markup_logo_position_option']);
 				<div class="col-sm-4">
 					<?php if( 1 == $search_header ){ ?>
 							<div class="search-box d-flex justify-content-end">
-								<?php //echo get_search_form(); ?>
-								<form id="searchform" class="searchform d-flex flex-nowrap" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-									<input type="text" class="search-field order-1" name="s" placeholder="Search" value="<?php echo get_search_query(); ?>">
-									<button class="search_btn" type="submit" value="Search"><i class="fa fa-search"></i></button>
-								</form>				
+								<?php echo get_search_form(); ?>		
 						</div>
 					<?php } ?>
 				</div>

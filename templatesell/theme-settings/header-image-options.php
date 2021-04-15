@@ -1,82 +1,6 @@
 <?php
 $GLOBALS['markup_theme_options'] = markup_get_options_value();
 
-/*Top Header Options*/
-$wp_customize->add_section( 'markup_top_header_section', array(
-   'priority'       => 20,
-   'capability'     => 'edit_theme_options',
-   'theme_supports' => '',
-   'title'          => __( 'Top Header', 'markup' ),
-   'panel' 		 => 'markup_panel',
-) );
-
-/*callback functions header section*/
-if ( !function_exists('markup_header_active_callback') ) :
-  function markup_header_active_callback(){
-      global $markup_theme_options;
-      $enable_header = absint($markup_theme_options['markup_enable_top_header']);
-      if( 1 == $enable_header ){
-          return true;
-      }
-      else{
-          return false;
-      }
-  }
-endif;
-
-/*Enable Top Header Section*/
-$wp_customize->add_setting( 'markup_options[markup_enable_top_header]', array(
-   'capability'        => 'edit_theme_options',
-   'transport' => 'refresh',
-   'default'           => $default['markup_enable_top_header'],
-   'sanitize_callback' => 'markup_sanitize_checkbox'
-) );
-
-$wp_customize->add_control( 'markup_options[markup_enable_top_header]', array(
-   'label'     => __( 'Enable Top Header', 'markup' ),
-   'description' => __('Checked to show the top header section like search and social icons', 'markup'),
-   'section'   => 'markup_top_header_section',
-   'settings'  => 'markup_options[markup_enable_top_header]',
-   'type'      => 'checkbox',
-   'priority'  => 5,
-) );
-
-/*Enable Social Icons In Header*/
-$wp_customize->add_setting( 'markup_options[markup_enable_top_header_social]', array(
-   'capability'        => 'edit_theme_options',
-   'transport' => 'refresh',
-   'default'           => $default['markup_enable_top_header_social'],
-   'sanitize_callback' => 'markup_sanitize_checkbox'
-) );
-
-$wp_customize->add_control( 'markup_options[markup_enable_top_header_social]', array(
-   'label'     => __( 'Enable Social Icons', 'markup' ),
-   'description' => __('You can show the social icons here. Manage social icons from Appearance > Menus. Social Menu will display here.', 'markup'),
-   'section'   => 'markup_top_header_section',
-   'settings'  => 'markup_options[markup_enable_top_header_social]',
-   'type'      => 'checkbox',
-   'priority'  => 5,
-   'active_callback'=>'markup_header_active_callback'
-) );
-
-/*Enable Menu in top Header*/
-$wp_customize->add_setting( 'markup_options[markup_enable_top_header_menu]', array(
-    'capability'        => 'edit_theme_options',
-    'transport' => 'refresh',
-    'default'           => $default['markup_enable_top_header_menu'],
-    'sanitize_callback' => 'markup_sanitize_checkbox'
-) );
-
-$wp_customize->add_control( 'markup_options[markup_enable_top_header_menu]', array(
-    'label'     => __( 'Menu in Header', 'markup' ),
-    'description' => __('Top Header Menu will display here. Go to Appearance < Menu.', 'markup'),
-    'section'   => 'markup_top_header_section',
-    'settings'  => 'markup_options[markup_enable_top_header_menu]',
-    'type'      => 'checkbox',
-    'priority'  => 5,
-    'active_callback'=>'markup_header_active_callback'
-) );
-
 /* Header Image Additional Options */
 /*Enable Overlay on the Header Image Part*/
 $wp_customize->add_setting( 'markup_options[markup_enable_header_image_overlay]', array(
@@ -98,7 +22,7 @@ $wp_customize->add_control(
    )
  );
 
-/*callback functions slider getting from post*/
+/*callback functions header overlay*/
 if ( !function_exists('markup_header_overlay_color_active_callback') ) :
   function markup_header_overlay_color_active_callback(){
       global $markup_theme_options;
