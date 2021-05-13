@@ -61,17 +61,19 @@ $image = absint($markup_theme_options['markup-single-page-featured-image']);
                 ?>
             </div><!-- .entry-content -->
             <footer class="post-footer entry-footer">
-                <div class="meta_bottom">
-                    <div class="post-tags">
-                    <?php if(has_tag()) { ?> 
-                        <i class="fa fa-tag"></i> <?php markup_entry_tags_meta(); ?>
+                <div class="d-flex justify-content-between">
+                    <?php if(has_tag()) { ?>
+                        <div class="d-flex justify-content-start post-tags"> 
+                            <i class="fa fa-tag"></i> <?php markup_entry_tags_meta(); ?>
+                        </div>
                     <?php } ?>
-                    </div>
+                    
                     <?php 
-                    if( 1 == $social_share ){
-                        do_action( 'markup_social_sharing' ,get_the_ID() );
-                    }
-                    ?>
+                    if( 1 == $social_share ){ ?>
+                        <div class="d-flex justify-content-end">
+                            <?php do_action( 'markup_social_sharing' ,get_the_ID() ); ?>
+                        </div>
+                    <?php } ?>
                 </div>
             </footer><!-- .entry-footer -->
             <?php the_post_navigation(); ?>

@@ -19,8 +19,11 @@ $ads_link = esc_url($markup_theme_options['markup_link_advertisement']);
 $logo_position = esc_attr($markup_theme_options['markup_logo_position_option']);
 ?>
 <header class="header-1 header-mobile d-md-block d-lg-none">		
-	<section class="main-header <?php echo esc_attr($header_class); ?>" style="background-image:url(<?php echo esc_url($header_image) ?>); background-size: cover; background-position: center; background-repeat: no-repeat;">
-		<div class="head_one py-0">
+	<section class="main-header">
+		<?php $header_image = esc_url(get_header_image());
+			$header_class = ($header_image == "") ? '' : 'header-image';
+		?>
+		<div class="head_one py-0 <?php echo esc_attr($header_class); ?>" style="background-image:url(<?php echo esc_url($header_image) ?>); background-size: cover; background-position: center; background-repeat: no-repeat;">
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="<?php echo esc_attr($logo_position); ?> col-12">
@@ -43,6 +46,13 @@ $logo_position = esc_attr($markup_theme_options['markup_logo_position_option']);
 							<?php endif; ?>
 						</div><!-- .site-logo -->
 					</div>
+					
+				</div>
+			</div>
+		</div>
+		<div class="menu-area border-bottom">
+			<div class="container">
+				<div class="row">
 					<div class="col-sm-12 d-flex align-items-center justify-content-between">
 						<div class="hamburger-menu">
 							<button class="bar-menu">
@@ -87,8 +97,6 @@ $logo_position = esc_attr($markup_theme_options['markup_logo_position_option']);
 					<?php endif; ?>
 				</div>
 			</div>
-		</div>
-		<div class="menu-area">
 			<div class="container">					
 				<nav id="site-navigation" class="site-navigation">
 					<div class="main-menu menu-caret">
@@ -107,11 +115,12 @@ $logo_position = esc_attr($markup_theme_options['markup_logo_position_option']);
 	</setion><!-- #masthead -->
 </header>
 
-<header class="header-1 header-desktop d-none d-lg-block">	<?php $header_image = esc_url(get_header_image());
+<header class="header-1 header-desktop d-none d-lg-block">	
+	<?php $header_image = esc_url(get_header_image());
 	$header_class = ($header_image == "") ? '' : 'header-image';
 	?>
-	<section class="main-header <?php echo esc_attr($header_class); ?>" style="background-image:url(<?php echo esc_url($header_image) ?>); background-size: cover; background-position: center; background-repeat: no-repeat;">
-		<div class="head_one">
+	<section class="main-header">
+		<div class="head_one <?php echo esc_attr($header_class); ?>" style="background-image:url(<?php echo esc_url($header_image) ?>); background-size: cover; background-position: center; background-repeat: no-repeat;">
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-sm-4">
@@ -184,6 +193,6 @@ $logo_position = esc_attr($markup_theme_options['markup_logo_position_option']);
 				</nav><!-- #site-navigation -->
 			</div>
 		</div>
-	</setion><!-- #masthead -->
+	</setion><!-- #masthead --> 
 </header>
 
