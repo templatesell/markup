@@ -74,16 +74,24 @@
 
 
 
-    function LogoCenter(){
-        var _header = $('.head_one');
-        var _LogoItem = $(_header).find('.center-logo');
-        _LogoItem.each(function(){
-            $(this).removeClass('col-sm-4 col-sm-8 text-left text-right ');
-            $(this).addClass('col-sm-12 text-center');
-        });
-    } 
-    LogoCenter();
+    // function LogoCenter(){
+    //     var _header = $('.head_one');
+    //     var _LogoItem = $(_header).find('.center-logo');
+    //     _LogoItem.each(function(){
+    //         $(this).removeClass('');
+    //         $(this).addClass('');
+    //     });
+    // } 
+    // LogoCenter();
 
+   
+    function LogoLeft(){
+        $('.head_one').find('.left-logo .A').removeClass('col-sm-4').addClass('col-sm-6');
+        $('.head_one').find('.left-logo .B').removeClass('col-sm-4 order-2').addClass('col-sm-6 order-1');
+        $('.head_one').find('.left-logo .C').removeClass('order-1 text-center').addClass('order-3 text-left')
+        $('.head_one').find('.left-logo .D').removeClass('col-sm-12').addClass('col-sm-8 order-3 text-right')
+    } 
+    LogoLeft();
 /*--------------------------------------------------------------
  Keyboard Navigation
 ----------------------------------------------------------------*/

@@ -63,7 +63,7 @@ $image = absint($markup_theme_options['markup-single-page-featured-image']);
             <footer class="post-footer entry-footer">
                 <div class="d-flex justify-content-between">
                     <?php if(has_tag()) { ?>
-                        <div class="d-flex justify-content-start post-tags"> 
+                        <div class="d-flex justify-content-start align-items-center post-tags"> 
                             <i class="fa fa-tag"></i> <?php markup_entry_tags_meta(); ?>
                         </div>
                     <?php } ?>

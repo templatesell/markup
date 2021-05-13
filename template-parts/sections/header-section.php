@@ -122,8 +122,8 @@ $logo_position = esc_attr($markup_theme_options['markup_logo_position_option']);
 	<section class="main-header">
 		<div class="head_one <?php echo esc_attr($header_class); ?>" style="background-image:url(<?php echo esc_url($header_image) ?>); background-size: cover; background-position: center; background-repeat: no-repeat;">
 			<div class="container">
-				<div class="row align-items-center">
-					<div class="col-sm-4">
+				<div class="row align-items-center <?php echo esc_attr($logo_position); ?>">
+					<div class="A col-sm-4 order-0 ">
 						<?php if( $enable_social == 1 ){ ?>
 							<div class="right-side">
 								<div class="social-links">
@@ -138,8 +138,15 @@ $logo_position = esc_attr($markup_theme_options['markup_logo_position_option']);
 							</div>
 						<?php } ?>
 					</div>
-					<div class="<?php echo esc_attr($logo_position); ?> col-sm-4">
-						<div class="logo text-center">
+					<div class="B col-sm-4 order-2">
+						<?php if( 1 == $search_header ){ ?>
+								<div class="search-box d-flex justify-content-end">
+									<?php echo get_search_form(); ?>		
+							</div>
+						<?php } ?>
+					</div>
+					<div class="C col-sm-4 order-1 text-center">
+						<div class="logo">
 							<?php
 							the_custom_logo();
 							if ( is_front_page() && is_home() ) :
@@ -158,22 +165,16 @@ $logo_position = esc_attr($markup_theme_options['markup_logo_position_option']);
 							<?php endif; ?>
 						</div><!-- .site-logo -->
 					</div>
+					
 					<?php if(!empty($ads_header)): ?>
-					<div class="<?php echo esc_attr($logo_position); ?> col-sm-8 text-right">
-						<div class="add__banner">
-						    <a href="<?php echo esc_url($ads_link); ?>" target="_blank">
-						        <img src="<?php echo esc_url($ads_header); ?>" alt="">
-						    </a>
+						<div class="D col-sm-12 order-3">
+							<div class="add__banner">
+							    <a href="<?php echo esc_url($ads_link); ?>" target="_blank">
+							        <img src="<?php echo esc_url($ads_header); ?>" alt="">
+							    </a>
+							</div>
 						</div>
-					</div>
-				<?php endif; ?>
-				<div class="col-sm-4">
-					<?php if( 1 == $search_header ){ ?>
-							<div class="search-box d-flex justify-content-end">
-								<?php echo get_search_form(); ?>		
-						</div>
-					<?php } ?>
-				</div>
+					<?php endif; ?>
 				</div>
 			</div>
 		</div>

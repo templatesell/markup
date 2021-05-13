@@ -2839,6 +2839,12 @@ a.effect:active {
     margin-bottom: 5px;
 }
 
+.post-tags a {
+    margin-left: 10px;
+}
+.post-tags a:first-child {
+    margin-left: 0;
+}
 .post-cats>span a:after {
     content: "";
     display: inline-block;
@@ -2877,11 +2883,15 @@ a.effect:active {
     position: relative;
     line-height: 1;
     background: none;
+    text-align: justify;
     border: none;
     outline: none;
     overflow: hidden;
     cursor: pointer;
     transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.post-share:hover{
+    min-width: 130px;
 }
  .post-share .btn-text, 
  .post-share .btn-icon {

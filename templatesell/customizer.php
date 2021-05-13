@@ -13,7 +13,7 @@ if ( !function_exists('markup_default_theme_options_values') ) :
 
           /*Logo Options*/
           'markup_logo_width_option' => '600',
-          'markup_logo_position_option'=> 'left-logo',
+          'markup_logo_position_option'=> 'center-logo',
 
             /*Header Image*/
             'markup_enable_header_image_overlay'=> 0,

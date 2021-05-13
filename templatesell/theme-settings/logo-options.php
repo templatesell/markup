@@ -10,8 +10,8 @@ $wp_customize->add_setting('markup_options[markup_logo_position_option]', array(
 
 $wp_customize->add_control('markup_options[markup_logo_position_option]', array(
     'choices' => array(
-        'left-logo' => __('Left Logo & Right Advertisement', 'markup'),
         'center-logo' => __('Center Logo & Below Advertisement', 'markup'),
+        'left-logo' => __('Left Logo & Right Advertisement', 'markup'),
     
     ),
     'label' => __('Logo Position Options', 'markup'),
