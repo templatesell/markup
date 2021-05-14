@@ -39,7 +39,7 @@ if (!function_exists('markup_related_post')) :
                             'category__in' => $category_ids,
                             'post__not_in' => array($post_id),
                             'post_type' => 'post',
-                            'posts_per_page' => 2,
+                            'posts_per_page' => 3,
                             'post_status' => 'publish',
                             'ignore_sticky_posts' => true
                         );
@@ -47,7 +47,7 @@ if (!function_exists('markup_related_post')) :
                         
                         while ($markup_featured_query->have_posts()) : $markup_featured_query->the_post();
                             ?>
-                            <div class="show-2-related-posts">
+                            <div class="show-3-related-posts">
                                 <div class="post-wrap">
                                     <?php
                                     if (has_post_thumbnail() ):

@@ -77,6 +77,16 @@ $image = absint($markup_theme_options['markup-single-page-featured-image']);
                 </div>
             </footer><!-- .entry-footer -->
             <?php the_post_navigation(); ?>
+            <?php 
+            /**
+             * markup_related_posts hook
+             * @since Markup 1.0.0
+             *
+             * @hooked markup_related_posts -  10
+             */
+            do_action( 'markup_related_posts' ,get_the_ID() );
+            ?>
+            
         </div>
     </div>
 </article><!-- #post-<?php the_ID(); ?> -->

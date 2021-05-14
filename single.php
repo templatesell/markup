@@ -11,12 +11,14 @@ get_header();
 <section id="content" class="site-content posts-container">
     <div class="container">
         <div class="row">
-			<div class="breadcrumbs-wrap">
-				<?php 
-				// Breadcrumb hook
-				do_action('markup_breadcrumb_options_hook'); ?> 
+        	<div class="col-sm-12">
+				<div class="breadcrumbs-wrap">
+					<?php 
+					// Breadcrumb hook
+					do_action('markup_breadcrumb_options_hook'); ?> 
+				</div>
 			</div>
-			<div id="primary" class="col-md-8 col-lg-9 col-xs-12 content-area">
+			<div id="primary" class="col-md-8 col-lg-9 col-xs-12 content-area mx-auto">
 				<main id="main" class="site-main">
 					<?php
 						while ( have_posts() ) :
@@ -39,17 +41,7 @@ get_header();
 <section class="">
     <div class="container">
         <div class="row">
-        	<div class="col-sm-12">
-				<?php 
-				/**
-				 * markup_related_posts hook
-				 * @since Markup 1.0.0
-				 *
-				 * @hooked markup_related_posts -  10
-				 */
-				do_action( 'markup_related_posts' ,get_the_ID() );
-				?>
-			</div>
+        	
 		</div>
 	</div>
 </section>

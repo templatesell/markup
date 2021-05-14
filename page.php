@@ -19,7 +19,7 @@ get_header();
 			<div class="breadcrumbs-wrap">
 				<?php do_action('markup_breadcrumb_options_hook'); ?> <!-- Breadcrumb hook -->
 			</div>
-			<div id="primary" class="col-md-8 col-lg-9 col-xs-12 content-area">
+			<div id="primary" class="col-md-8 col-lg-9 col-xs-12 content-area mx-auto">
 				<main id="main" class="site-main">
 				<?php
 				while ( have_posts() ) :
