@@ -10,8 +10,6 @@
  */
 $GLOBALS['markup_theme_options'] = markup_get_options_value();
 global $markup_theme_options;
-$enable_header = absint($markup_theme_options['markup_enable_top_header']);
-$enable_menu   = absint($markup_theme_options['markup_enable_top_header_menu']);
 $enable_social = absint($markup_theme_options['markup_enable_top_header_social']);
 $search_header = absint($markup_theme_options['markup_enable_search']);
 $ads_header = esc_url($markup_theme_options['markup_enable_advertisement']);

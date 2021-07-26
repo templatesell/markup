@@ -74,15 +74,6 @@ if ( ! function_exists( 'markup_setup' ) ) :
 			'flex-height' => true,
 		) );
 
-		// Add theme support for selective refresh for widgets.
-		add_theme_support( 'customize-selective-refresh-widgets' );
-
-		// Add support for responsive embedded content.
-		add_theme_support( 'responsive-embeds' );
-
-		// Add support for default block styles.
-		add_theme_support( 'wp-block-styles' );
-
 		// Add support for Yoast SEO Breadcrumbs.
         add_theme_support( 'yoast-seo-breadcrumbs' );
 
@@ -118,6 +109,147 @@ if ( ! function_exists( 'markup_setup' ) ) :
 					'shortName' => __( 'XL', 'markup' ),
 					'size'      => 35,
 					'slug'      => 'larger',
+				),
+			)
+		);
+
+		// Add theme support for selective refresh for widgets.
+		add_theme_support( 'customize-selective-refresh-widgets' );
+
+		// Add support for Block Styles.
+		add_theme_support( 'wp-block-styles' );
+
+		// Add support for full and wide align images.
+		add_theme_support( 'align-wide' );
+
+		// Add support for responsive embedded content.
+		add_theme_support( 'responsive-embeds' );
+
+		// Add support for custom line height controls.
+		add_theme_support( 'custom-line-height' );
+
+		// Add support for experimental link color control.
+		add_theme_support( 'experimental-link-color' );
+
+		// Add support for experimental cover block spacing.
+		add_theme_support( 'custom-spacing' );
+
+		// Add support for custom units.
+		// This was removed in WordPress 5.6 but is still required to properly support WP 5.5.
+		add_theme_support( 'custom-units' );
+
+		// Add custom editor font sizes.
+		//Credit: Twenty Twenty One theme
+		// Editor color palette.
+		$black     = '#000000';
+		$dark_gray = '#28303D';
+		$gray      = '#39414D';
+		$green     = '#D1E4DD';
+		$blue      = '#D1DFE4';
+		$purple    = '#D1D1E4';
+		$red       = '#E4D1D1';
+		$orange    = '#E4DAD1';
+		$yellow    = '#EEEADD';
+		$white     = '#FFFFFF';
+
+		add_theme_support(
+			'editor-color-palette',
+			array(
+				array(
+					'name'  => esc_html__( 'Black', 'master' ),
+					'slug'  => 'black',
+					'color' => $black,
+				),
+				array(
+					'name'  => esc_html__( 'Dark gray', 'master' ),
+					'slug'  => 'dark-gray',
+					'color' => $dark_gray,
+				),
+				array(
+					'name'  => esc_html__( 'Gray', 'master' ),
+					'slug'  => 'gray',
+					'color' => $gray,
+				),
+				array(
+					'name'  => esc_html__( 'Green', 'master' ),
+					'slug'  => 'green',
+					'color' => $green,
+				),
+				array(
+					'name'  => esc_html__( 'Blue', 'master' ),
+					'slug'  => 'blue',
+					'color' => $blue,
+				),
+				array(
+					'name'  => esc_html__( 'Purple', 'master' ),
+					'slug'  => 'purple',
+					'color' => $purple,
+				),
+				array(
+					'name'  => esc_html__( 'Red', 'master' ),
+					'slug'  => 'red',
+					'color' => $red,
+				),
+				array(
+					'name'  => esc_html__( 'Orange', 'master' ),
+					'slug'  => 'orange',
+					'color' => $orange,
+				),
+				array(
+					'name'  => esc_html__( 'Yellow', 'master' ),
+					'slug'  => 'yellow',
+					'color' => $yellow,
+				),
+				array(
+					'name'  => esc_html__( 'White', 'master' ),
+					'slug'  => 'white',
+					'color' => $white,
+				),
+			)
+		);
+
+		add_theme_support(
+			'editor-gradient-presets',
+			array(
+				array(
+					'name'     => esc_html__( 'Purple to yellow', 'master' ),
+					'gradient' => 'linear-gradient(160deg, ' . $purple . ' 0%, ' . $yellow . ' 100%)',
+					'slug'     => 'purple-to-yellow',
+				),
+				array(
+					'name'     => esc_html__( 'Yellow to purple', 'master' ),
+					'gradient' => 'linear-gradient(160deg, ' . $yellow . ' 0%, ' . $purple . ' 100%)',
+					'slug'     => 'yellow-to-purple',
+				),
+				array(
+					'name'     => esc_html__( 'Green to yellow', 'master' ),
+					'gradient' => 'linear-gradient(160deg, ' . $green . ' 0%, ' . $yellow . ' 100%)',
+					'slug'     => 'green-to-yellow',
+				),
+				array(
+					'name'     => esc_html__( 'Yellow to green', 'master' ),
+					'gradient' => 'linear-gradient(160deg, ' . $yellow . ' 0%, ' . $green . ' 100%)',
+					'slug'     => 'yellow-to-green',
+				),
+				array(
+					'name'     => esc_html__( 'Red to yellow', 'master' ),
+					'gradient' => 'linear-gradient(160deg, ' . $red . ' 0%, ' . $yellow . ' 100%)',
+					'slug'     => 'red-to-yellow',
+				),
+				array(
+					'name'     => esc_html__( 'Yellow to red', 'master' ),
+					'gradient' => 'linear-gradient(160deg, ' . $yellow . ' 0%, ' . $red . ' 100%)',
+					'slug'     => 'yellow-to-red',
+				),
+				array(
+					'name'     => esc_html__( 'Purple to red', 'master' ),
+					'gradient' => 'linear-gradient(160deg, ' . $purple . ' 0%, ' . $red . ' 100%)',
+					'slug'     => 'purple-to-red',
+				),
+				array(
+					'name'     => esc_html__( 'Red to purple', 'master' ),
+					'gradient' => 'linear-gradient(160deg, ' . $red . ' 0%, ' . $purple . ' 100%)',
+					'slug'     => 'red-to-purple',
 				),
 			)
 		);

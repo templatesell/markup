@@ -30,40 +30,7 @@ Markup includes support for Infinite Scroll in Jetpack.
 * Custom pagination for numeric is made.
 
 == Changelog ==
-= 1.0.8 - March 09 2021 =
-* Added compatibility for plugin breadcrumbs
-* Pro notice added 
-
-= 1.0.7 - February 06 2021 =
-* Fixed some minor css 
-
-= 1.0.6 - January 25 2021 =
-* Fixed some minor css for mobile view
-
-= 1.0.5 - January 23 2021 =
-* Fixed mailchimp form design
-* Fixed header image
-* Fixed releated post design
-* Fixed some minor css fixes
-
-= 1.0.4 - January 22 2021 =
-* Fixed some minor css fixes
-
-= 1.0.3 - January 22 2021 =
-* Added upgrade to pro
-* Added about us page
-* Fixed some minor css fixes
-
-= 1.0.2 - January 21 2021 =
-* Fixed reviewer issues
-* Keyboard navigation fixed
-* Added underline in links
-
-= 1.0.1 - January 18 2021 =
-* Added Block Patterns
-* Fixed some minor css issues
-
-= 1.0.0 - December 21 2020 =
+= 1.0.0 - July 26 2021 =
 * Initial release
 
 == Credits ==

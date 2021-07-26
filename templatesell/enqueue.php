@@ -90,12 +90,16 @@ function markup_block_styles() {
     wp_enqueue_style( 'markup-editor-styles', get_theme_file_uri( 'css/editor-styles.css' ) );
 
     /*body  */
-    wp_enqueue_style('markup-editor-body', '//fonts.googleapis.com/css?family=Poppins:300,400,400i,500,600,700&display=swap', array(), null);
+    wp_enqueue_style('markup-body', '//fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,500&display=swap" rel="stylesheet', array(), null);
+    
     /*heading  */
-    wp_enqueue_style('markup-editor-heading', '//fonts.googleapis.com/css?family=Prata&display=swap', array(), null);
+    wp_enqueue_style('markup-heading', '//fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap', array(), null);
 
     $markup_custom_css = '
-    .edit-post-visual-editor.editor-styles-wrapper{ font-family: Poppins;}
+    .editor-styles-wrapper p{ 
+        font-family: Roboto;
+        line-height: 1.5;
+    }
 
     .editor-post-title__block .editor-post-title__input,
     .editor-styles-wrapper h1,
@@ -103,7 +107,7 @@ function markup_block_styles() {
     .editor-styles-wrapper h3,
     .editor-styles-wrapper h4,
     .editor-styles-wrapper h5,
-    .editor-styles-wrapper h6{font-family:Prata;} 
+    .editor-styles-wrapper h6{font-family:Roboto Slab;} 
     ';
 
     wp_add_inline_style( 'markup-editor-styles', $markup_custom_css );
