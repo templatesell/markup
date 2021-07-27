@@ -52,11 +52,23 @@ $logo_position = esc_attr($markup_theme_options['markup_logo_position_option']);
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12 d-flex align-items-center justify-content-between">
-						<div class="hamburger-menu">
-							<button class="bar-menu">
-								<span></span>
-							</button>
-						</div>
+						<nav id="site-navigation" class="site-navigation">
+							<div class="hamburger-menu">
+								<button class="bar-menu">
+									<span></span>
+								</button>
+							</div>
+							<div class="main-menu menu-caret">
+								<?php
+								wp_nav_menu( array(
+									'theme_location' => 'menu-1',
+									'menu_id'        => 'primary-menu',
+									'container' => 'ul',
+									'menu_class'      => ''
+								));
+								?>
+							</div>
+						</nav><!-- #site-navigation -->
 						<div class="header-right d-flex align-items-center justify-content-end">
 							<?php if( $enable_social == 1 ){ ?>
 								<div class="social-links">
@@ -94,20 +106,6 @@ $logo_position = esc_attr($markup_theme_options['markup_logo_position_option']);
 						</div>
 					<?php endif; ?>
 				</div>
-			</div>
-			<div class="container">					
-				<nav id="site-navigation" class="site-navigation">
-					<div class="main-menu menu-caret">
-						<?php
-						wp_nav_menu( array(
-							'theme_location' => 'menu-1',
-							'menu_id'        => 'primary-menu',
-							'container' => 'ul',
-							'menu_class'      => ''
-						));
-						?>
-					</div>
-				</nav><!-- #site-navigation -->
 			</div>
 		</div>
 	</setion><!-- #masthead -->

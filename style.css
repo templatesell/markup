@@ -2089,8 +2089,12 @@ textarea {
     max-width: 100%;
     width: 100%;
     padding: 0 15px;
+    margin-top: 40px;
 }
-
+.middle-column .breadcrumbs-wrap,
+.middle-column .archive-heading{
+    text-align: center;
+}
 .archive-title {
     margin: -7px 0 0;
     font-size: 29px;
