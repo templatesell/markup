@@ -156,52 +156,52 @@ if ( ! function_exists( 'markup_setup' ) ) :
 			'editor-color-palette',
 			array(
 				array(
-					'name'  => esc_html__( 'Black', 'master' ),
+					'name'  => esc_html__( 'Black', 'markup' ),
 					'slug'  => 'black',
 					'color' => $black,
 				),
 				array(
-					'name'  => esc_html__( 'Dark gray', 'master' ),
+					'name'  => esc_html__( 'Dark gray', 'markup' ),
 					'slug'  => 'dark-gray',
 					'color' => $dark_gray,
 				),
 				array(
-					'name'  => esc_html__( 'Gray', 'master' ),
+					'name'  => esc_html__( 'Gray', 'markup' ),
 					'slug'  => 'gray',
 					'color' => $gray,
 				),
 				array(
-					'name'  => esc_html__( 'Green', 'master' ),
+					'name'  => esc_html__( 'Green', 'markup' ),
 					'slug'  => 'green',
 					'color' => $green,
 				),
 				array(
-					'name'  => esc_html__( 'Blue', 'master' ),
+					'name'  => esc_html__( 'Blue', 'markup' ),
 					'slug'  => 'blue',
 					'color' => $blue,
 				),
 				array(
-					'name'  => esc_html__( 'Purple', 'master' ),
+					'name'  => esc_html__( 'Purple', 'markup' ),
 					'slug'  => 'purple',
 					'color' => $purple,
 				),
 				array(
-					'name'  => esc_html__( 'Red', 'master' ),
+					'name'  => esc_html__( 'Red', 'markup' ),
 					'slug'  => 'red',
 					'color' => $red,
 				),
 				array(
-					'name'  => esc_html__( 'Orange', 'master' ),
+					'name'  => esc_html__( 'Orange', 'markup' ),
 					'slug'  => 'orange',
 					'color' => $orange,
 				),
 				array(
-					'name'  => esc_html__( 'Yellow', 'master' ),
+					'name'  => esc_html__( 'Yellow', 'markup' ),
 					'slug'  => 'yellow',
 					'color' => $yellow,
 				),
 				array(
-					'name'  => esc_html__( 'White', 'master' ),
+					'name'  => esc_html__( 'White', 'markup' ),
 					'slug'  => 'white',
 					'color' => $white,
 				),
@@ -212,42 +212,42 @@ if ( ! function_exists( 'markup_setup' ) ) :
 			'editor-gradient-presets',
 			array(
 				array(
-					'name'     => esc_html__( 'Purple to yellow', 'master' ),
+					'name'     => esc_html__( 'Purple to yellow', 'markup' ),
 					'gradient' => 'linear-gradient(160deg, ' . $purple . ' 0%, ' . $yellow . ' 100%)',
 					'slug'     => 'purple-to-yellow',
 				),
 				array(
-					'name'     => esc_html__( 'Yellow to purple', 'master' ),
+					'name'     => esc_html__( 'Yellow to purple', 'markup' ),
 					'gradient' => 'linear-gradient(160deg, ' . $yellow . ' 0%, ' . $purple . ' 100%)',
 					'slug'     => 'yellow-to-purple',
 				),
 				array(
-					'name'     => esc_html__( 'Green to yellow', 'master' ),
+					'name'     => esc_html__( 'Green to yellow', 'markup' ),
 					'gradient' => 'linear-gradient(160deg, ' . $green . ' 0%, ' . $yellow . ' 100%)',
 					'slug'     => 'green-to-yellow',
 				),
 				array(
-					'name'     => esc_html__( 'Yellow to green', 'master' ),
+					'name'     => esc_html__( 'Yellow to green', 'markup' ),
 					'gradient' => 'linear-gradient(160deg, ' . $yellow . ' 0%, ' . $green . ' 100%)',
 					'slug'     => 'yellow-to-green',
 				),
 				array(
-					'name'     => esc_html__( 'Red to yellow', 'master' ),
+					'name'     => esc_html__( 'Red to yellow', 'markup' ),
 					'gradient' => 'linear-gradient(160deg, ' . $red . ' 0%, ' . $yellow . ' 100%)',
 					'slug'     => 'red-to-yellow',
 				),
 				array(
-					'name'     => esc_html__( 'Yellow to red', 'master' ),
+					'name'     => esc_html__( 'Yellow to red', 'markup' ),
 					'gradient' => 'linear-gradient(160deg, ' . $yellow . ' 0%, ' . $red . ' 100%)',
 					'slug'     => 'yellow-to-red',
 				),
 				array(
-					'name'     => esc_html__( 'Purple to red', 'master' ),
+					'name'     => esc_html__( 'Purple to red', 'markup' ),
 					'gradient' => 'linear-gradient(160deg, ' . $purple . ' 0%, ' . $red . ' 100%)',
 					'slug'     => 'purple-to-red',
 				),
 				array(
-					'name'     => esc_html__( 'Red to purple', 'master' ),
+					'name'     => esc_html__( 'Red to purple', 'markup' ),
 					'gradient' => 'linear-gradient(160deg, ' . $red . ' 0%, ' . $purple . ' 100%)',
 					'slug'     => 'red-to-purple',
 				),

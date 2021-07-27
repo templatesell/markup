@@ -49,32 +49,8 @@ Markup is distributed under the terms of the GNU GPL v2 or later.
 
 
 == Block Patters & Screenshot Images [CCO License] ==
-Image for theme screenshot, Copyright Foodie Girl
+Image for theme screenshot, Copyright Authentic Stock 
 License: CC0 1.0 Universal (CC0 1.0)
-Source: https://stocksnap.io/photo/cookies-dessert-BSLV1NZFJ3
-
-Image for theme screenshot, Copyright Candace McDaniel
-License: CC0 1.0 Universal (CC0 1.0)
-Source: https://stocksnap.io/photo/woman-sunglasses-T9MVXPNPWP
-
-Image for theme screenshot, Copyright Matt Moloney
-License: CC0 1.0 Universal (CC0 1.0)
-Source: https://stocksnap.io/photo/laptop-work-D8MPRQM38G
-
-Image for theme screenshot, Copyright Direct Media
-License: CC0 1.0 Universal (CC0 1.0)
-Source: https://stocksnap.io/photo/family-breakfast-2GQIFRMRWI
-
-Image for theme screenshot, Copyright Matt Bango
-License: CC0 1.0 Universal (CC0 1.0)
-Source: https://stocksnap.io/photo/woman-walking-YE8TQVJ00L
-
-Image for theme screenshot, Copyright Kristin Hardwick
-License: CC0 1.0 Universal (CC0 1.0)
-Source: https://stocksnap.io/photo/browsing-smartphone-JXOLOKSWX2
-
-Image for Block Pattern Author, Copyright Ilya Yakover
-License: CC0 1.0 Universal (CC0 1.0)
-Source: https://stocksnap.io/photo/people-girl-Q2WJXI3CSE
+Source: https://stocksnap.io/photo/wellness-cosmetics-TQ6B6IW8VJ
 
 * Sidbear icons for the customizer are self created and license under GPL.
