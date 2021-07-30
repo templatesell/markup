@@ -2635,8 +2635,15 @@ object {
 .post-content {
     padding-bottom: 0;
 }
-
-.post-content p a {
+.entry-content h1 a,
+.entry-content h2 a,
+.entry-content h3 a,
+.entry-content h4 a,
+.entry-content h5 a,
+.entry-content h6 a,
+.entry-content li a, 
+.entry-content p a,
+.entry-content a {
     text-decoration: underline!important;
 }
 
