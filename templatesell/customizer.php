@@ -36,7 +36,7 @@ if ( !function_exists('markup_default_theme_options_values') ) :
             'markup-select-category'    => 0,
     
             /*Boxes Section */
-            'markup_enable_promo'       => 1,
+            'markup_enable_promo'       => 0,
             'markup-promo-select-category'=> 0,
             
             /*Blog Page*/

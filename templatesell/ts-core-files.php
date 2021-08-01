@@ -57,14 +57,6 @@ require get_template_directory() . '/templatesell/customizer-radio-image-control
 require get_template_directory() . '/templatesell/dynamic-css.php';
 
 /**
- * load custom widgets
- */
-require get_template_directory() . '/templatesell/widgets/widget-init.php';
-require get_template_directory() . '/templatesell/widgets/ts-author-widget.php';
-require get_template_directory() . '/templatesell/widgets/ts-recent-posts-widget.php';
-require get_template_directory() . '/templatesell/widgets/ts-social-widget.php';
-
-/**
  * Load Hooks
 */
 require get_template_directory() . '/templatesell/hooks/related-posts.php';
