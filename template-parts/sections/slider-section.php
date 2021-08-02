@@ -26,7 +26,7 @@ $slide_id = absint($markup_theme_options['markup-select-category']);
       <?php
   		$slider_query = new WP_Query($args);
   		if ($slider_query->have_posts()): ?>
-      <div class="banner-slider" data-slick='<?php echo $slick_args_encoded; ?>'>
+      <div class="banner-slider">
   				<?php while ($slider_query->have_posts()) : $slider_query->the_post(); 
             if(has_post_thumbnail()){
             $image_id = get_post_thumbnail_id();
