@@ -78,3 +78,16 @@ require get_template_directory() . '/templatesell/filters/body-class.php';
  * Load Block Pattern
  */
 require get_template_directory() . '/templatesell/patterns/block-pattern.php';
+
+/**
+ * Upgrade to pro
+ */
+ require get_template_directory() . '/templatesell/upgrade/class-customize.php';
+
+/**
+ * For Admin Page
+ */
+if ( is_admin() ) {
+ require get_template_directory() . '/templatesell/about/about.php';
+ require get_template_directory() . '/templatesell/pro-notice/pro-notice.php';
+}
