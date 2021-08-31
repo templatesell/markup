@@ -30,6 +30,9 @@ Markup includes support for Infinite Scroll in Jetpack.
 * Custom pagination for numeric is made.
 
 == Changelog ==
+= 1.0.3 - August 31 2021 =
+* Fixed some minor CSS issues
+
 = 1.0.2 - August 04 2021 =
 * Added upgrade to pro
 * Added theme about page
