@@ -27,17 +27,25 @@ if (!function_exists('markup_dynamic_css')) :
         //Primary  Background 
         if (!empty($markup_primary_color)) {
             $custom_css .= "
-            { 
+            #toTop,
+            .comment-form #submit{ 
                 background-color: ". $markup_primary_color."; 
-                border-color: ".$markup_primary_color.";
             }";
 
         }
         //Primary Color
         if (!empty($markup_primary_color)) {
             $custom_css .= "
-            {
-                border-color:".$markup_primary_color.";
+            .main-menu ul li.current-menu-item>a, 
+            .main-menu ul li:hover>a,
+            .widget a:hover, 
+            .widget a:focus,
+            .footer-menu li a:hover, 
+            .footer-menu li a:focus,
+            .site-footer a:hover, 
+            .site-footer a:focus,
+            ul.trail-items li a:hover span{
+                color:".$markup_primary_color.";
             }";
          }
         //Primary Color

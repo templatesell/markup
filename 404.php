@@ -12,9 +12,9 @@ get_header();
 <section id="content" class="site-content posts-container">
 	<div class="container">
 		<div class="row">
-			<div id="primary" class="col-xs-12 page-404-container">
+			<div id="primary" class="col-xs-12 page-404-container mx-auto">
 				<main id="main" class="site-main">
-					<div class="page-404-content">
+					<div class="page-404-content text-center">
 						<h1 class="error-code"><?php esc_html_e( '404', 'markup' ); ?></h1>
 						<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'markup' ); ?></h1>
 						<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'markup' ); ?></p>

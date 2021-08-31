@@ -2256,7 +2256,6 @@ textarea {
     position: relative;
     margin-bottom: 40px;
     background-color: #ffffff;
-    padding: 30px;
     word-wrap: break-word;
     overflow: hidden;
 }
@@ -4497,7 +4496,9 @@ input[type="radio"]:checked:before {
 .page-404-content a:focus {
     color: #ec407a;
 }
-
+.page-404-content .searchform{
+    max-width: 100%;
+}
 .search-no-results .search-form label,
 .page-404-content .search-form label {
     display: block;
