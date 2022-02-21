@@ -30,6 +30,10 @@ Markup includes support for Infinite Scroll in Jetpack.
 * Custom pagination for numeric is made.
 
 == Changelog ==
+= 1.0.4 - February 21 2022 =
+* Fixed image size issues in search page
+* Tested with WordPress 5.9
+
 = 1.0.3 - August 31 2021 =
 * Fixed some minor CSS issues
 
