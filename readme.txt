@@ -65,6 +65,8 @@ Markup is distributed under the terms of the GNU GPL v2 or later.
 * Slick Slider https://github.com/kenwheeler/slick/blob/master/LICENSE [The MIT License (MIT)]
 * Font-Awesome https://github.com/FortAwesome/Font-Awesome FontAwesome 4.6.3 Copyright 2012 Dave Gandy Font License: SIL OFL 1.1 Code License: MIT License http://fontawesome.io/license/
 * imagesLoaded MIT License https://imagesloaded.desandro.com/#mit-license
+* Webfont loader  https://github.com/WPTT/webfont-loader https://github.com/WPTT/webfont-loader/blob/master/LICENSE
+
 
 
 == Block Patters & Screenshot Images [CCO License] ==
