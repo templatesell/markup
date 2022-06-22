@@ -65,7 +65,7 @@ if ( !function_exists('markup_default_theme_options_values') ) :
             'markup-enable-sticky-sidebar' => 0,
 
             /*Footer Section*/
-            'markup-footer-copyright'  => esc_html__('Copyright All Rights Reserved 2021','markup'),
+            'markup-footer-copyright'  => esc_html__('Copyright All Rights Reserved 2022','markup'),
 
             /*Breadcrumb Options*/
             'markup-extra-breadcrumb' => 1,

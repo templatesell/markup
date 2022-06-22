@@ -6,13 +6,17 @@ function markup_scripts() {
 
 	/*google font  */
 	global $markup_theme_options;
-    /*body  */
-    wp_enqueue_style('markup-body', '//fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,500&display=swap" rel="stylesheet', array(), null);
-    /*heading  */
-    wp_enqueue_style('markup-heading', '//fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap', array(), null);
-    /*Author signature google font  */
-    wp_enqueue_style('markup-sign', '//fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&display=swap', array(), null);
-    
+
+    /*google font  */
+	require_once get_theme_file_path( 'templatesell/wptt-webfont-loader.php' );
+
+   // Load the webfont.
+    wp_enqueue_style(
+        'markup-fonts',
+        wptt_get_webfont_url( 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,500&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Monsieur+La+Doulaise&display=swap' ),
+        array(),
+        '1.0'
+    );    
 	
     wp_enqueue_style( 'animate-css', get_template_directory_uri() . '/css/animate.min.css', array(), '4.5.0' );
 
