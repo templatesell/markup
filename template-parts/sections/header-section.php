@@ -40,7 +40,7 @@ $logo_position = esc_attr($markup_theme_options['markup_logo_position_option']);
 							$markup_description = get_bloginfo( 'description', 'display' );
 							if ( $markup_description || is_customize_preview() ) :
 								?>
-								<p class="site-description"><?php echo $markup_description; /* WPCS: xss ok. */ ?></p>
+								<p class="site-description"><?php echo wp_kses_post( $markup_description ); ?></p>
 							<?php endif; ?>
 						</div><!-- .site-logo -->
 					</div>
@@ -157,7 +157,7 @@ $logo_position = esc_attr($markup_theme_options['markup_logo_position_option']);
 							$markup_description = get_bloginfo( 'description', 'display' );
 							if ( $markup_description || is_customize_preview() ) :
 								?>
-								<p class="site-description"><?php echo $markup_description; /* WPCS: xss ok. */ ?></p>
+								<p class="site-description"><?php echo wp_kses_post( $markup_description ); ?></p>
 							<?php endif; ?>
 						</div><!-- .site-logo -->
 					</div>

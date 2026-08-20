@@ -18,7 +18,7 @@ function markup_admin_scripts( $hook ) {
 	if ( 'appearance_page_markup-theme' !== $hook ) {
 		return;
 	}
-	wp_enqueue_style( 'markup-admin-style', get_template_directory_uri() . '/templatesell/about/about.css', array(), '' );
+	wp_enqueue_style( 'markup-admin-style', get_template_directory_uri() . '/templatesell/about/about.css', array(), MARKUP_VERSION );
 }
 add_action( 'admin_enqueue_scripts', 'markup_admin_scripts' );
 

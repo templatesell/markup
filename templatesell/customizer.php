@@ -29,7 +29,7 @@ if ( !function_exists('markup_default_theme_options_values') ) :
             'markup_link_advertisement'=>'',
 
             /*Colors Options*/
-            'markup_primary_color'              => '#ec407a',
+            'markup_primary_color'              => '#e5175c',
 
             /*Slider Options*/
             'markup_enable_slider'      => 1,
