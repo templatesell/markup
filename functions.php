@@ -17,6 +17,15 @@ if ( ! function_exists( 'markup_setup' ) ) :
 	 */
 	function markup_setup() {
 		/*
+		 * Customizer values, published early.
+		 *
+		 * These were only assigned in header.php, so any request that renders
+		 * without the header template - the feed above all - left the global
+		 * null while filters such as excerpt_length still read from it.
+		 */
+		$GLOBALS['markup_theme_options'] = markup_get_options_value();
+
+		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
 		 * If you're building a theme based on Markup, use a find and replace

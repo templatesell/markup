@@ -26,8 +26,12 @@ if (!function_exists('markup_alter_excerpt')) :
             return $length;
         }
         global $markup_theme_options;
-        $excerpt_length = absint($markup_theme_options['markup-excerpt-length']);
-        if (!empty($excerpt_length) && isset($excerpt_length)) {
+        // Read defensively: the global may not be populated yet on requests that
+        // never load the header template.
+        $excerpt_length = isset($markup_theme_options['markup-excerpt-length'])
+            ? absint($markup_theme_options['markup-excerpt-length'])
+            : 0;
+        if (!empty($excerpt_length)) {
             return $excerpt_length;
         }
         return 50;
