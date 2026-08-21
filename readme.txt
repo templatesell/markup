@@ -33,7 +33,7 @@ Markup includes support for Infinite Scroll in Jetpack.
 = 1.0.6 - August 20 2026 =
 * Fixed - Fatal error on pages with non-ASCII permalinks. Percent-encoded characters in a URL were read as sprintf() format specifiers, which threw an uncaught ArgumentCountError on PHP 8 and returned a 500 for the whole page.
 * Fixed - PHP warnings in the feed, from a theme options global that was only populated in header.php.
-* Fixed - The editor requested a Google Fonts URL with an HTML fragment pasted inside it, so the editor body font never loaded at all.
+* Fixed - The editor requested a Google Fonts URL with an HTML fragment pasted inside it, which left a malformed display parameter on the request. Google tolerated it and still served the font, so nothing visibly broke, but the URL was wrong and it is moot now that the fonts are bundled.
 * Fixed - Post tags rendered outside their own styling wrapper, because the span was closed before the tag list rather than around it.
 * Fixed - Block pattern styles were enqueued behind is_admin(), so patterns were styled in the editor but not on the published page. The function was also named after a different theme, copied from prefer-blog.
 * Fixed - Block patterns were registered at file scope, before init, so the strings in their titles forced an early text domain load. WordPress 6.7 and later reported that as doing_it_wrong on every request.
