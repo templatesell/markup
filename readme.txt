@@ -1,6 +1,8 @@
 === Markup ===
 
 Contributors: templatesell
+Theme URI: https://www.templatesell.com/item/markup-seo-wordpress-blog-theme/
+Author URI: https://www.templatesell.com/
 Tags: custom-background, custom-header, one-column, two-columns, three-columns, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, blog, news
 Requires at least: 6.0
 Requires PHP: 7.4
