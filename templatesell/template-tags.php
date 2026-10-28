@@ -26,11 +26,11 @@ if ( ! function_exists( 'markup_posted_on' ) ) :
 	$posted_on = 
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 
-	$byline = sprintf(
-            esc_html_x('By %s', 'post author', 'markup'),
-            '<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a></span>'
-        );
-        echo '<span class="posted-on">' . $posted_on . '</span>';
+        // $byline was assembled here and never used; markup_posted_by() below
+        // is what actually renders the author.
+        // $posted_on is assembled above from esc_url/esc_attr/esc_html parts,
+        // so kses keeps the <time> and <a rel="bookmark"> markup intact.
+        echo '<span class="posted-on">' . wp_kses_post( $posted_on ) . '</span>';
 	}
 endif;
 
@@ -44,7 +44,7 @@ if ( ! function_exists( 'markup_posted_by' ) ) :
 			esc_html_x( 'by %s', 'post author', 'markup' ),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
-        echo '<span class="post_by"> ' . $byline . '</span>'; // WPCS: XSS OK.
+        echo '<span class="post_by"> ' . wp_kses_post( $byline ) . '</span>';
 	}
 endif;
 
@@ -59,7 +59,7 @@ if ( ! function_exists( 'markup_entry_meta' ) ) :
 		$categories_list = get_the_category_list( esc_html__( '&nbsp;', 'markup' ) );
 
 		if ( $categories_list ) {
-			echo '<span class="cat-links">' . $categories_list . '</span>';
+			echo '<span class="cat-links">' . wp_kses_post( $categories_list ) . '</span>';
 		}
       	
 	}
@@ -78,7 +78,9 @@ if ( ! function_exists( 'markup_entry_tags_meta' ) ) :
         /* translators: used between list items, there is a space after the comma */
         $tags_list = get_the_tag_list( '', esc_html__( ',', 'markup' ) );
         if ( $tags_list && is_singular() ) {
-            echo '<span class="tags-links"></span>' . $tags_list; // WPCS: XSS OK.
+            // The span used to be closed before the list, so the tags rendered
+            // outside their own styling wrapper.
+            echo '<span class="tags-links">' . wp_kses_post( $tags_list ) . '</span>';
         }
         
     }

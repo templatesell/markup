@@ -61,7 +61,7 @@ if( $promo_cat > 0 && is_home() )
                                                             $count++;
                                                             if ( 1 == $count )
                                                             {
-                                                                echo $c_tag->name;
+                                                                echo esc_html( $c_tag->name );
                                                             }
                                                         }
                                                     } ?>

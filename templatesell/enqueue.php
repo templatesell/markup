@@ -7,28 +7,27 @@ function markup_scripts() {
 	/*google font  */
 	global $markup_theme_options;
 
-    /*google font  */
-	require_once get_theme_file_path( 'templatesell/wptt-webfont-loader.php' );
+    /*
+     * Roboto, Roboto Slab and Monsieur La Doulaise are bundled in
+     * assets/fonts/. This replaces the WPTT webfont loader, which still had
+     * to reach fonts.googleapis.com on first use and cache into the uploads
+     * directory, so it needed both outbound network access and a writable
+     * uploads folder. Each face keeps its unicode-range, so browsers still
+     * download only the subsets a page needs.
+     */
+    wp_enqueue_style( 'markup-fonts', get_template_directory_uri() . '/assets/fonts/fonts.css', array(), MARKUP_VERSION );
 
-   // Load the webfont.
-    wp_enqueue_style(
-        'markup-fonts',
-        wptt_get_webfont_url( 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,500&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Monsieur+La+Doulaise&display=swap' ),
-        array(),
-        '1.0'
-    );    
-	
-    wp_enqueue_style( 'animate-css', get_template_directory_uri() . '/css/animate.min.css', array(), '4.5.0' );
+    wp_enqueue_style( 'animate-css', get_template_directory_uri() . '/css/animate.min.css', array(), '4.1.1' );
 
-    wp_enqueue_style( 'grid-css', get_template_directory_uri() . '/css/bootstrap.css', array(), '4.5.0' );
+    wp_enqueue_style( 'grid-css', get_template_directory_uri() . '/css/bootstrap.css', array(), MARKUP_VERSION );
     //*Font-Awesome-master*/
-    wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.5.0' );
+    wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.6.3' );
 
     /*Slick CSS*/
-    wp_enqueue_style( 'slick', get_template_directory_uri() . '/assets/css/slick.css', array(), '4.5.0' );
+    wp_enqueue_style( 'slick', get_template_directory_uri() . '/assets/css/slick.css', array(), '1.8.1' );
 
    /*Main CSS*/
-    wp_enqueue_style( 'markup-style', get_stylesheet_uri() );
+    wp_enqueue_style( 'markup-style', get_stylesheet_uri(), array(), MARKUP_VERSION );
 
 	/*RTL CSS*/
 	wp_style_add_data( 'markup-style', 'rtl', 'replace' );
@@ -91,13 +90,14 @@ add_action( 'wp_enqueue_scripts', 'markup_scripts' );
  * Enqueue fonts for the editor style
  */
 function markup_block_styles() {
-    wp_enqueue_style( 'markup-editor-styles', get_theme_file_uri( 'css/editor-styles.css' ) );
+    wp_enqueue_style( 'markup-editor-styles', get_theme_file_uri( 'css/editor-styles.css' ), array(), MARKUP_VERSION );
 
-    /*body  */
-    wp_enqueue_style('markup-body', '//fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,500&display=swap" rel="stylesheet', array(), null);
-    
-    /*heading  */
-    wp_enqueue_style('markup-heading', '//fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap', array(), null);
+    /*
+     * The editor used to request Google directly, bypassing the local fonts
+     * the front end already used. The body URL also had an HTML fragment
+     * pasted inside it, so that request could never resolve at all.
+     */
+    wp_enqueue_style( 'markup-fonts', get_template_directory_uri() . '/assets/fonts/fonts.css', array(), MARKUP_VERSION );
 
     $markup_custom_css = '
     .editor-styles-wrapper p{ 
@@ -123,11 +123,19 @@ add_action( 'enqueue_block_editor_assets', 'markup_block_styles' );
 /**
  * Enqueue Style for block pattern.
  */
-function prefer_blog_block_style() {
+function markup_block_pattern_styles() {
 
-    /*Block Pattern*/
-    if (is_admin()) {
-        wp_enqueue_style( 'markup-block-style', get_template_directory_uri() . '/templatesell/patterns/block-style.css');
-    }
+    /*
+     * Was named prefer_blog_block_style, copied from the prefer-blog child
+     * theme, and gated behind is_admin(), so the block pattern styling applied
+     * in the editor but not on the published page. enqueue_block_assets runs
+     * in both contexts, which is the point of the hook.
+     */
+    wp_enqueue_style(
+        'markup-block-style',
+        get_template_directory_uri() . '/templatesell/patterns/block-style.css',
+        array(),
+        MARKUP_VERSION
+    );
 }
-add_action( 'enqueue_block_assets', 'prefer_blog_block_style');
+add_action( 'enqueue_block_assets', 'markup_block_pattern_styles' );

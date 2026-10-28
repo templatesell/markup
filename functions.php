@@ -7,6 +7,13 @@
  * @package Markup
  */
 
+/**
+ * Theme version, used to cache-bust enqueued assets.
+ */
+if ( ! defined( 'MARKUP_VERSION' ) ) {
+	define( 'MARKUP_VERSION', wp_get_theme( 'markup' )->get( 'Version' ) );
+}
+
 if ( ! function_exists( 'markup_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -17,6 +24,15 @@ if ( ! function_exists( 'markup_setup' ) ) :
 	 */
 	function markup_setup() {
 		/*
+		 * Customizer values, published early.
+		 *
+		 * These were only assigned in header.php, so any request that renders
+		 * without the header template - the feed above all - left the global
+		 * null while filters such as excerpt_length still read from it.
+		 */
+		$GLOBALS['markup_theme_options'] = markup_get_options_value();
+
+		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
 		 * If you're building a theme based on Markup, use a find and replace
@@ -26,6 +42,34 @@ if ( ! function_exists( 'markup_setup' ) ) :
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
+
+		/*
+		 * custom-background is advertised in the theme tags but was never
+		 * registered, so anyone filtering for it on WordPress.org got a theme
+		 * that did not provide it. html5 markup is the modern default.
+		 */
+		add_theme_support(
+			'custom-background',
+			apply_filters(
+				'markup_custom_background_args',
+				array(
+					'default-color' => 'ffffff',
+					'default-image' => '',
+				)
+			)
+		);
+
+		/*
+		 * css/editor-styles.css was enqueued for the block editor but the theme
+		 * never called add_editor_style(), so the classic editor never picked up
+		 * the theme typography at all.
+		 */
+		add_editor_style( 'css/editor-styles.css' );
+
+		add_theme_support(
+			'html5',
+			array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'style', 'script' )
+		);
 
 		/*
 		 * Let WordPress manage the document title.

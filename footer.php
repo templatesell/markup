@@ -55,7 +55,7 @@ if ( is_active_sidebar( 'full-width-footer' ) ){
 				if ( is_active_sidebar( 'footer-' . $i ) )
 				{
 					?>
-					<div class="footer-col-<?php echo $footer_col; ?>">
+					<div class="footer-col-<?php echo absint( $footer_col ); ?>">
 						<div class="footer-top-box wow fadeInUp">
 							<?php dynamic_sidebar( 'footer-' . $i ); ?>
 						</div>
@@ -71,7 +71,7 @@ if ( is_active_sidebar( 'full-width-footer' ) ){
 			<div class="row">
 				<div class="col-sm-6">
 					<div class="copyright">
-						<?php echo $copyright; ?>
+						<?php echo wp_kses_post( $copyright ); ?>
 						<span class="sep"> | </span>
 						<?php
 						/* translators: 1: Theme name, 2: Theme author. */
@@ -95,7 +95,6 @@ if ( is_active_sidebar( 'full-width-footer' ) ){
 	</footer>
 	<?php do_action('markup_go_to_top_hook'); ?>
 </div>
-</div><!-- main container -->
 </div><!-- #page -->
 <?php wp_footer(); ?>
 </body>

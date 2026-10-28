@@ -40,7 +40,7 @@ $logo_position = esc_attr($markup_theme_options['markup_logo_position_option']);
 							$markup_description = get_bloginfo( 'description', 'display' );
 							if ( $markup_description || is_customize_preview() ) :
 								?>
-								<p class="site-description"><?php echo $markup_description; /* WPCS: xss ok. */ ?></p>
+								<p class="site-description"><?php echo wp_kses_post( $markup_description ); ?></p>
 							<?php endif; ?>
 						</div><!-- .site-logo -->
 					</div>
@@ -108,7 +108,7 @@ $logo_position = esc_attr($markup_theme_options['markup_logo_position_option']);
 				</div>
 			</div>
 		</div>
-	</setion><!-- #masthead -->
+	</section><!-- #masthead -->
 </header>
 
 <header class="header-1 header-desktop d-none d-lg-block">	
@@ -157,7 +157,7 @@ $logo_position = esc_attr($markup_theme_options['markup_logo_position_option']);
 							$markup_description = get_bloginfo( 'description', 'display' );
 							if ( $markup_description || is_customize_preview() ) :
 								?>
-								<p class="site-description"><?php echo $markup_description; /* WPCS: xss ok. */ ?></p>
+								<p class="site-description"><?php echo wp_kses_post( $markup_description ); ?></p>
 							<?php endif; ?>
 						</div><!-- .site-logo -->
 					</div>
@@ -176,12 +176,12 @@ $logo_position = esc_attr($markup_theme_options['markup_logo_position_option']);
 		</div>
 		<div class="menu-area">
 			<div class="container">					
-				<nav id="site-navigation" class="site-navigation">
+				<nav id="site-navigation-desktop" class="site-navigation">
 					<div class="main-menu menu-caret">
 						<?php
 						wp_nav_menu( array(
 							'theme_location' => 'menu-1',
-							'menu_id'        => 'primary-menu',
+							'menu_id'        => 'primary-menu-desktop',
 							'container' => 'ul',
 							'menu_class'      => ''
 						));
@@ -190,6 +190,6 @@ $logo_position = esc_attr($markup_theme_options['markup_logo_position_option']);
 				</nav><!-- #site-navigation -->
 			</div>
 		</div>
-	</setion><!-- #masthead --> 
+	</section><!-- #masthead --> 
 </header>
 

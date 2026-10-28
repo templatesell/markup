@@ -10,6 +10,16 @@
  * Make sure that block patterns are enabled before registering.
  * Requires WordPress version 5.5 or Gutenberg version 7.8.
  */
+/**
+ * Register the patterns on init.
+ *
+ * These used to run at file scope. block-pattern.php is required while the
+ * theme loads, so registration happened before init and the __() calls in the
+ * pattern titles forced an early text domain load, which WordPress 6.7 and
+ * later report as doing_it_wrong on every request.
+ */
+function markup_register_block_patterns() {
+
 if ( function_exists( 'register_block_pattern' ) ) {
 
 
@@ -374,3 +384,20 @@ if ( function_exists( 'register_block_pattern' ) ) {
 		)
 	);
 }
+}
+add_action( 'init', 'markup_register_block_patterns' );
+
+/**
+ * Block styles, so the pattern library has matching options in the inspector.
+ */
+function markup_register_block_styles() {
+
+	if ( ! function_exists( 'register_block_style' ) ) {
+		return;
+	}
+
+	register_block_style( 'core/quote', array( 'name' => 'markup-bordered', 'label' => __( 'Bordered', 'markup' ) ) );
+	register_block_style( 'core/image', array( 'name' => 'markup-rounded', 'label' => __( 'Rounded', 'markup' ) ) );
+	register_block_style( 'core/button', array( 'name' => 'markup-outline', 'label' => __( 'Outline', 'markup' ) ) );
+}
+add_action( 'init', 'markup_register_block_styles' );
