@@ -62,8 +62,7 @@ class Markup_Theme_Notice {
 
 		global $current_user;
 		$this->current_user_data = $current_user;
-		// Always a string: the other branch already assigns a name, so leaving a
-		// WP_Theme object here made the property's type depend on the site setup.
+		// Theme name as a string.
 		$this->active_theme      = wp_get_theme()->get( 'Name' );
 
 		// In case user is using child theme, we need to show `Upgrade To Pro` notice too.
@@ -174,7 +173,7 @@ class Markup_Theme_Notice {
 	 * Set the nag for partially ignored users.
 	 */
 	/**
-	 * Build a nonce protected dismissal URL.
+	 * Build a nonce-protected dismissal URL.
 	 *
 	 * @param string $action Query argument, also used as the nonce action.
 	 * @return string
@@ -189,10 +188,7 @@ class Markup_Theme_Notice {
 	}
 
 	/**
-	 * Decide whether a dismissal request is genuine.
-	 *
-	 * These handlers write user meta straight from a GET parameter, so without a
-	 * nonce any page could dismiss the notice on a logged-in admin's behalf.
+	 * Check the nonce and capability of a dismissal request.
 	 *
 	 * @param string $action Query argument, also used as the nonce action.
 	 * @return bool

@@ -38,7 +38,6 @@ html a {
  }
 body {
     font-family: 'Roboto', sans-serif;
-    /* 15px/1.5 was cramped for body copy; 16px/1.75 reads far better. */
     font-size: 16px;
     font-style: normal;
     font-weight: normal;
@@ -86,13 +85,10 @@ h3,
 h4,
 h5,
 h6 {
-    /* Margin follows the font size so every level keeps the same rhythm. */
     margin: 0 0 0.6em;
     font-family: 'Roboto Slab', serif;
     font-style: normal;
     font-weight: 800;
-    /* Headings shared the body's 1.5, which left multi-line headings
-       looking disconnected. */
     line-height: 1.25;
     letter-spacing: -0.01em;
     color: #000000;

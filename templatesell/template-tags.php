@@ -26,10 +26,7 @@ if ( ! function_exists( 'markup_posted_on' ) ) :
 	$posted_on = 
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 
-        // $byline was assembled here and never used; markup_posted_by() below
-        // is what actually renders the author.
-        // $posted_on is assembled above from esc_url/esc_attr/esc_html parts,
-        // so kses keeps the <time> and <a rel="bookmark"> markup intact.
+        // markup_posted_by() renders the author.
         echo '<span class="posted-on">' . wp_kses_post( $posted_on ) . '</span>';
 	}
 endif;
@@ -78,8 +75,6 @@ if ( ! function_exists( 'markup_entry_tags_meta' ) ) :
         /* translators: used between list items, there is a space after the comma */
         $tags_list = get_the_tag_list( '', esc_html__( ',', 'markup' ) );
         if ( $tags_list && is_singular() ) {
-            // The span used to be closed before the list, so the tags rendered
-            // outside their own styling wrapper.
             echo '<span class="tags-links">' . wp_kses_post( $tags_list ) . '</span>';
         }
         

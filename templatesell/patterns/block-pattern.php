@@ -12,11 +12,6 @@
  */
 /**
  * Register the patterns on init.
- *
- * These used to run at file scope. block-pattern.php is required while the
- * theme loads, so registration happened before init and the __() calls in the
- * pattern titles forced an early text domain load, which WordPress 6.7 and
- * later report as doing_it_wrong on every request.
  */
 function markup_register_block_patterns() {
 

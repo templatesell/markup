@@ -7,14 +7,7 @@ function markup_scripts() {
 	/*google font  */
 	global $markup_theme_options;
 
-    /*
-     * Roboto, Roboto Slab and Monsieur La Doulaise are bundled in
-     * assets/fonts/. This replaces the WPTT webfont loader, which still had
-     * to reach fonts.googleapis.com on first use and cache into the uploads
-     * directory, so it needed both outbound network access and a writable
-     * uploads folder. Each face keeps its unicode-range, so browsers still
-     * download only the subsets a page needs.
-     */
+    // Locally hosted webfonts.
     wp_enqueue_style( 'markup-fonts', get_template_directory_uri() . '/assets/fonts/fonts.css', array(), MARKUP_VERSION );
 
     wp_enqueue_style( 'animate-css', get_template_directory_uri() . '/css/animate.min.css', array(), '4.1.1' );
@@ -92,11 +85,7 @@ add_action( 'wp_enqueue_scripts', 'markup_scripts' );
 function markup_block_styles() {
     wp_enqueue_style( 'markup-editor-styles', get_theme_file_uri( 'css/editor-styles.css' ), array(), MARKUP_VERSION );
 
-    /*
-     * The editor used to request Google directly, bypassing the local fonts
-     * the front end already used. The body URL also had an HTML fragment
-     * pasted inside it, so that request could never resolve at all.
-     */
+    // Locally hosted webfonts for the editor.
     wp_enqueue_style( 'markup-fonts', get_template_directory_uri() . '/assets/fonts/fonts.css', array(), MARKUP_VERSION );
 
     $markup_custom_css = '
@@ -125,12 +114,7 @@ add_action( 'enqueue_block_editor_assets', 'markup_block_styles' );
  */
 function markup_block_pattern_styles() {
 
-    /*
-     * Was named prefer_blog_block_style, copied from the prefer-blog child
-     * theme, and gated behind is_admin(), so the block pattern styling applied
-     * in the editor but not on the published page. enqueue_block_assets runs
-     * in both contexts, which is the point of the hook.
-     */
+    // Loads in the editor and on the front end.
     wp_enqueue_style(
         'markup-block-style',
         get_template_directory_uri() . '/templatesell/patterns/block-style.css',

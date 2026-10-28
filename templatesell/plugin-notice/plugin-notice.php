@@ -2,10 +2,8 @@
 /**
  * Recommended plugins notice.
  *
- * Everything listed here is hosted on WordPress.org and entirely optional - the
- * theme is fully functional without any of it. Nothing is bundled and nothing is
- * installed on the user's behalf; the links below hand off to core's own plugin
- * installer, behind a capability check and a nonce.
+ * All plugins are optional and hosted on WordPress.org. Nothing is installed
+ * automatically.
  *
  * @package Markup
  */
@@ -16,9 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! function_exists( 'markup_recommended_plugins' ) ) :
 	/**
-	 * The plugins worth suggesting, in the order they are shown.
+	 * Recommended plugins, in display order.
 	 *
-	 * @return array[] Each entry has a slug, the main plugin file and a display name.
+	 * @return array[] Each entry has a slug, plugin file and name.
 	 */
 	function markup_recommended_plugins() {
 
@@ -49,10 +47,9 @@ endif;
 
 if ( ! function_exists( 'markup_missing_recommended_plugins' ) ) :
 	/**
-	 * List the recommended plugins that are not active yet.
+	 * Recommended plugins that are not active yet.
 	 *
-	 * @return array[] Subset of markup_recommended_plugins(), each with an added
-	 *                 'installed' flag so the notice can offer the right action.
+	 * @return array[] Subset of markup_recommended_plugins(), with an 'installed' flag.
 	 */
 	function markup_missing_recommended_plugins() {
 
@@ -78,12 +75,10 @@ endif;
 
 if ( ! function_exists( 'markup_plugin_action_url' ) ) :
 	/**
-	 * Build the install or activate URL for one recommended plugin.
-	 *
-	 * Both are core screens, nonced the way core nonces them.
+	 * Install or activate URL for one recommended plugin.
 	 *
 	 * @param array $plugin One entry from markup_recommended_plugins().
-	 * @return string Admin URL, or an empty string if the user cannot act on it.
+	 * @return string Admin URL, or empty if the user cannot act on it.
 	 */
 	function markup_plugin_action_url( $plugin ) {
 
@@ -111,7 +106,7 @@ endif;
 
 if ( ! function_exists( 'markup_plugin_notice' ) ) :
 	/**
-	 * Show the recommendation until it is dismissed or everything is active.
+	 * Show the notice until dismissed or all plugins are active.
 	 */
 	function markup_plugin_notice() {
 
@@ -129,7 +124,7 @@ if ( ! function_exists( 'markup_plugin_notice' ) ) :
 			return;
 		}
 
-		// Use the active theme's own name, so child themes read correctly too.
+		// Active theme name, so child themes read correctly.
 		$theme_name = wp_get_theme()->get( 'Name' );
 
 		$names = array();
@@ -182,7 +177,7 @@ add_action( 'admin_notices', 'markup_plugin_notice' );
 
 if ( ! function_exists( 'markup_plugin_notice_dismiss_url' ) ) :
 	/**
-	 * Nonced URL that dismisses the notice for the current user.
+	 * Nonce-protected URL that dismisses the notice.
 	 *
 	 * @return string
 	 */

@@ -8,7 +8,7 @@
  */
 
 /**
- * Theme version, used to cache-bust enqueued assets.
+ * Theme version, used for asset cache busting.
  */
 if ( ! defined( 'MARKUP_VERSION' ) ) {
 	define( 'MARKUP_VERSION', wp_get_theme( 'markup' )->get( 'Version' ) );
@@ -23,13 +23,7 @@ if ( ! function_exists( 'markup_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function markup_setup() {
-		/*
-		 * Customizer values, published early.
-		 *
-		 * These were only assigned in header.php, so any request that renders
-		 * without the header template - the feed above all - left the global
-		 * null while filters such as excerpt_length still read from it.
-		 */
+		// Customizer values, needed before header.php runs.
 		$GLOBALS['markup_theme_options'] = markup_get_options_value();
 
 		/*
@@ -43,11 +37,7 @@ if ( ! function_exists( 'markup_setup' ) ) :
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 
-		/*
-		 * custom-background is advertised in the theme tags but was never
-		 * registered, so anyone filtering for it on WordPress.org got a theme
-		 * that did not provide it. html5 markup is the modern default.
-		 */
+		// Custom background support.
 		add_theme_support(
 			'custom-background',
 			apply_filters(
@@ -59,11 +49,7 @@ if ( ! function_exists( 'markup_setup' ) ) :
 			)
 		);
 
-		/*
-		 * css/editor-styles.css was enqueued for the block editor but the theme
-		 * never called add_editor_style(), so the classic editor never picked up
-		 * the theme typography at all.
-		 */
+		// Classic editor styles.
 		add_editor_style( 'css/editor-styles.css' );
 
 		add_theme_support(

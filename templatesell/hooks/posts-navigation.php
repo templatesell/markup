@@ -17,12 +17,7 @@ if (!function_exists('markup_posts_navigation')) :
             global $wp_query;
             $big = 999999999; // need an unlikely integer
 
-            /*
-             * prev_text and next_text used to be wrapped in __(), but they hold
-             * no words, only an icon element, so a translator saw nothing but
-             * markup. paginate_links() also returns null when there is one page
-             * or fewer, which used to leave an empty pagination div behind.
-             */
+            // Arrows are icons only, so no translation functions.
             $markup_links = paginate_links(
                 array(
                     'base'      => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
@@ -46,10 +41,6 @@ if (!function_exists('markup_posts_navigation')) :
             } else {
                 $output_page = $page_number + 1;
             }
-            /*
-             * This used to call paginate_links() with no arguments purely to test
-             * truthiness, building the whole pagination markup and discarding it.
-             */
             global $wp_query;
 
             if ( $wp_query->max_num_pages > 1 ) {
